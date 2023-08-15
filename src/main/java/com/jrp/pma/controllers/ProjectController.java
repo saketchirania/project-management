@@ -18,6 +18,13 @@ public class ProjectController {
     @Autowired
     ProjectRepository proReop;
 
+    @GetMapping
+    public String displayProjects(Model model)
+    {
+        List<Project> projectList = proReop.findAll();
+        model.addAttribute("projects",projectList);
+        return "projects/list-projects";
+    }
 
     @GetMapping("/new")
     public String displayProjectForm(Model model){
