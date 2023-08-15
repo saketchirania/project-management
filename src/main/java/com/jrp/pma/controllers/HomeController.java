@@ -30,7 +30,7 @@ public class HomeController {
         // we are querying the database for employess
         List<Employee> employees = employeeRepository.findAll();
         model.addAttribute("employees",employees);
-        return "home.html";
+        return "main/home.html";
     }
 
 
