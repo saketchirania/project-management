@@ -15,6 +15,14 @@ public class Employee {
     private String lastName;
     private String email;
 
+
+    @ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST},
+            fetch = FetchType.LAZY)
+    @JoinTable(name = "project_employee",
+            joinColumns =@JoinColumn (name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id"))
+    private List<Project> projects;
+
     public Employee()
     {
 
@@ -56,5 +64,14 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 }
