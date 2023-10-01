@@ -2,6 +2,7 @@ package com.jrp.pma.controllers;
 
 import com.jrp.pma.dao.EmployeeRepository;
 import com.jrp.pma.dao.ProjectRepository;
+import com.jrp.pma.dto.EmployeeProject;
 import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ public class HomeController {
         model.addAttribute("projects",project );
 
         // we are querying the database for employess
-        List<Employee> employees = employeeRepository.findAll();
-        model.addAttribute("employees",employees);
+        List<EmployeeProject> employeesProjectCnt = employeeRepository.employeeProjects();
+        model.addAttribute("employeesListProjectsCnt",employeesProjectCnt);
         return "main/home.html";
     }
 
