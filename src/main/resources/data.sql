@@ -21,4 +21,4 @@ insert into project_employee (employee_id, project_id) values (31,1001);
 insert into project_employee (employee_id, project_id) values (31,1002);
 insert into project_employee (employee_id, project_id) values (33,1000);
 insert into project_employee (employee_id, project_id) values (36,1002);
-insert into project_employee (employee_id, project_id) values (3 6,1003);
+insert into project_employee (employee_id, project_id) values (36,1003);
