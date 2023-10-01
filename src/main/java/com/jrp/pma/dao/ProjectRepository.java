@@ -12,7 +12,7 @@ public interface ProjectRepository extends CrudRepository<Project, Long> {
     @Override
     public List<Project> findAll();
 
-    @Query(nativeQuery = true, value="SELECT stage as label, COUNT(*) as value " +  "FROM project " +
+    @Query(nativeQuery = true, value="SELECT stage as label, COUNT(*) as taming " +  "FROM project " +
             "GROUP BY stage")
     public List<ChartData> getProjectStatus();
 }

@@ -1,3 +1,15 @@
+var chartDataStr = decodeHtml(chartData);
+var chartJsonArray = JSON.parse(chartDataStr);
+
+var arrayLength = chartJsonArray.length;
+
+var numericData = [];
+var labelData = [];
+
+for(var i=0; i < arrayLength; i++){
+	numericData[i] = chartJsonArray[i].value;
+	labelData[i] = chartJsonArray[i].label;
+}
 
 // For a pie chart
 new Chart(document.getElementById("myPieChart"), {
