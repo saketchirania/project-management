@@ -74,11 +74,11 @@ public class  Project {
         this.stage = stage;
     }
 
-//    public void addEmployee(Employee emp) {
-//        if (employees==null)
-//        {
-//            employees =  new ArrayList<>();
-//        }
-//        employees.add(emp);
-//    }
+    public void addEmployee(Employee emp) {
+        if (employees==null)
+        {
+            employees =  new ArrayList<>();
+        }
+        employees.add(emp);
+    }
 }
