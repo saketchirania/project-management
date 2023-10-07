@@ -9,6 +9,7 @@ import com.jrp.pma.dto.EmployeeProject;
 import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,9 @@ import java.util.Objects;
 @Controller
 public class HomeController {
 
+    @Value("${version}")
+    private String ver;
+
     @Autowired
     ProjectRepository projectRepository;
     @Autowired
@@ -30,6 +34,7 @@ public class HomeController {
     @GetMapping("/")
     public String displayHome(Model model) throws JsonProcessingException {
 
+        model.addAttribute("versionNumber",ver);
         Map<String, Object> map = new HashMap<>();
         // we are querying the database for projects
         List<Project> project = projectRepository.findAll();
